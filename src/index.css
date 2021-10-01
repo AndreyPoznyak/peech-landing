@@ -1,3 +1,15 @@
 body {
     background-color: #f7f7f9;
 }
+
+.logo {
+    background-image: url('../assets/logo.png');
+    background-size: 189px 215px;
+    width: 189px;
+    height: 215px;
+    margin: 100px auto;
+}
+
+.text {}
+
+.button {}
