@@ -41,23 +41,25 @@ module.exports = {
             persistentCache: true,
             // Inject the html into the html-webpack-plugin
             inject: true,
-            // favicon background color (see https://github.com/haydenbleasel/favicons#usage)
-            background: '#fff',
-            // favicon app title (see https://github.com/haydenbleasel/favicons#usage)
-            title: 'Peech App',
 
-            // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
-            icons: {
-                android: false,
-                appleIcon: true,
-                appleStartup: false,
-                coast: false,
-                favicons: true,
-                firefox: false,
-                opengraph: false,
-                twitter: false,
-                yandex: false,
-                windows: false
+            cache: true,
+
+            favicons: {
+                background: '#fff',
+                title: 'Peech App',
+
+                icons: {
+                    android: false,
+                    appleIcon: true,
+                    appleStartup: false,
+                    coast: false,
+                    favicons: true,
+                    firefox: false,
+                    opengraph: false,
+                    twitter: false,
+                    yandex: false,
+                    windows: false
+                }
             }
         }),
         // new MiniCssExtractPlugin({
