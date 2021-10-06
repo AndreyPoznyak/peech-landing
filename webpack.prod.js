@@ -4,7 +4,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const buildPath = path.resolve(__dirname, 'docs');
+const buildPath = path.resolve(__dirname, 'dist');
 
 module.exports = {
     entry: "./src/index.js",
@@ -18,20 +18,11 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: ['style-loader', 'css-loader'],
-              },
+            },
             {
-                // Load all images as base64 encoding if they are smaller than 8192 bytes
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            name: '[name].[hash:20].[ext]',
-                            limit: 8192
-                        }
-                    }
-                ]
-            }
+                test: /\.(png|svg|jpg|jpeg|gif)$/i,
+                type: 'asset/resource',
+            },
         ]
     },
     plugins: [
