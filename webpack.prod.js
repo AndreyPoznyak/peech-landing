@@ -2,7 +2,7 @@ const path = require('path');
 
 const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+//const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const buildPath = path.resolve(__dirname, 'docs');
 
@@ -57,21 +57,21 @@ module.exports = {
 
             // which icons should be generated (see https://github.com/haydenbleasel/favicons#usage)
             icons: {
-                android: true,
+                android: false,
                 appleIcon: true,
                 appleStartup: true,
                 coast: false,
                 favicons: true,
-                firefox: true,
+                firefox: false,
                 opengraph: false,
                 twitter: false,
                 yandex: false,
                 windows: false
             }
         }),
-        new MiniCssExtractPlugin({
-            filename: 'styles.[contenthash].css'
-        }),
+        // new MiniCssExtractPlugin({
+        //     filename: 'styles.[contenthash].css'
+        // }),
         // new OptimizeCssAssetsPlugin({
         //     cssProcessor: require('cssnano'),
         //     cssProcessorOptions: {
