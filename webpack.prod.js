@@ -4,7 +4,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 //const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const buildPath = path.resolve(__dirname, 'dist');
+const buildPath = path.resolve(__dirname, 'docs');
 
 module.exports = {
     entry: "./src/index.js",
