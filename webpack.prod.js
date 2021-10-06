@@ -50,7 +50,7 @@ module.exports = {
             icons: {
                 android: false,
                 appleIcon: true,
-                appleStartup: true,
+                appleStartup: false,
                 coast: false,
                 favicons: true,
                 firefox: false,
