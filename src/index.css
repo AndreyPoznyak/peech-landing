@@ -1,7 +1,7 @@
 html {
     height: 100%;
     background-color: #f7f7f9;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 body {
@@ -31,7 +31,8 @@ body {
 }
 
 .button {
-    width: 300px;
+    max-width: 300px;
+    width: 80%;
     height: 60px;
     line-height: 60px;
     text-align: center;
