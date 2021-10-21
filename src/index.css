@@ -22,10 +22,32 @@ body {
     height: 180px;
 }
 
+@media screen and (max-height: 600px) {
+    .logo {
+        height: 140px;
+    }
+}
+
+.rating {
+    background-image: url('../assets/stars.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 180px;
+    height: 40px;
+}
+
+.users-stats {
+    width: 180px;
+    font-weight: 400;
+    font-size: 18px;
+    text-align: center;
+}
+
 .text {
     text-align: center;
     font-weight: 300;
-    font-size: 16px;
+    font-size: 18px;
     max-width: 70%;
 }
 
