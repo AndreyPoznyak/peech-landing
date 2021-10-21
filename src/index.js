@@ -1,4 +1,4 @@
-import './index.css';
+import './index.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
     const link = document.querySelector('.store-link');
