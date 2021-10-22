@@ -34,7 +34,8 @@ module.exports = {
     }),
     new CopyPlugin({
       patterns: [
-        "pages"
+        "pages",
+        "CNAME"
       ],
     }),
   ],

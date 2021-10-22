@@ -66,6 +66,7 @@ module.exports = {
         new CopyPlugin({
             patterns: [
               { from: "./pages", to: buildPath },
+              "CNAME"
             ],
           }),
         // new MiniCssExtractPlugin({
