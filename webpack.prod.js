@@ -29,7 +29,9 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             template: './index.html',
-            environment: 'production',
+            templateParameters: {
+                environment: 'production',
+            },
             inject: 'head',
         }),
         new FaviconsWebpackPlugin({
