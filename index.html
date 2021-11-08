@@ -11,6 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
     <meta name="facebook-domain-verification" content="mv7b5vp49ugde8r5w64byfqxsk51rd" />
+    <% if (environment === 'production') { %>
     <!-- Facebook Pixel Code -->
     <script>
         !function(f,b,e,v,n,t,s)
@@ -28,6 +29,7 @@
         src="https://www.facebook.com/tr?id=2084090588407192&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Facebook Pixel Code -->
+    <% } %>
 </head>
 <body>
     <div class="logo"></div>
