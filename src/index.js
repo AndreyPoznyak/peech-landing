@@ -11,5 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     link.addEventListener('click', () => {
         pixelCall('track', 'CompleteRegistration');
+        console.log('Link clicked.');
     });
 });
