@@ -4,13 +4,14 @@ app:
   featured: Featured in
 
 footer:
-  copyright: Made with ❤️ in Europe 🇪🇺 by <a href="https://www.sandoche.com" target="_blank">Sandoche</a>
+  copyright: All Rights Reserved, Peech 2022</a>
   links:
-    - title: Github
-      url: https://github.com/sandoche/Mobile-app-landingpage-template
+    - title: Facebook
+      url: https://www.facebook.com/peechapp
       target: _blank
-    - title: Donate
-      url: https://paypal.me/kanbanote
+    - title: Terms
+      url: /terms
       target: _blank
     - title: Privacy
       url: /privacy
+      target: _blank

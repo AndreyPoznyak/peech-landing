@@ -1,0 +1,18 @@
+{
+  "version": "1.0.0",
+  "api_version": 1,
+  "layout": {
+    "logo": "yandex-browser-50x50.png",
+    "color": "#fff",
+    "show_title": true
+  },
+  "name": "Mobile App Name",
+  "short_name": "Mobile App Name",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "A super tagline for the mobile app",
+  "scope": "/",
+  "theme_color": "#efeeff",
+  "background_color": "#efeeff"
+}

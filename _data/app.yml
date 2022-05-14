@@ -1,21 +1,22 @@
-name: Mobile App Name
-description: A super tagline for the mobile app
-full_description: 'A more complete description of the mobile app<br>
-<br>With a lot of features:
-<br>- Feature 1
-<br>- Feature 2
-<br>- Feature 3'
-android: https://telegra.ph/Replace-this-link-07-23
-iOS: https://telegra.ph/Replace-this-link-07-23
-web: https://telegra.ph/Replace-this-link-07-23
+name: Peech
+description: Convert any text format into speech and listen on the go!
+full_description: 'The app that is capable of reading aloud any content:<br>
+<br>- Text recognition on photos
+<br>- Wide support of input formats
+<br>- Extracting the text from web pages
+<br>- Great natural sounding voices
+<br>- Supporting more than 60 languages'
+iOS: https://apple.co/3yEjiDe
 screenshots:
   - 1.png
   - 2.png
   - 3.png
   - 4.png
-producthunt: https://telegra.ph/Replace-this-link-07-23
-companies:
-  - url: https://telegra.ph/Replace-this-link-07-23
-    image: androidpolice.png
-  - url: https://telegra.ph/Replace-this-link-07-23
-    image: producthunt.png
+  - 5.png
+  - 6.png
+  - 7.png
+# companies:
+#   - url: https://telegra.ph/Replace-this-link-07-23
+#     image: androidpolice.png
+#   - url: https://telegra.ph/Replace-this-link-07-23
+#     image: producthunt.png
