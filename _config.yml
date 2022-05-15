@@ -50,10 +50,10 @@ exclude:
   - package.json
   - README.md
   - webpack.config.js
-  - yarn-error.log
-  - yarn.lock
+  - package-lock.json
   - config
   - optimization-fix
   - optimization-fix-this-file-is-ignored.js
   - icon.png
   - docs
+  - tracking_cta_page

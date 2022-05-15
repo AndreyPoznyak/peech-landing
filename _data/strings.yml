@@ -1,10 +1,10 @@
 app:
   screenshots: Screenshots
   description: Description
-  featured: Featured in
+  # featured: Featured in
 
 footer:
-  copyright: All Rights Reserved, Peech 2022</a>
+  copyright: © 2022 Peech App, All Rights Reserved.
   links:
     - title: Facebook
       url: https://www.facebook.com/peechapp

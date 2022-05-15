@@ -3,8 +3,8 @@
 $container-width: 960px;
 $container-padding: 30px;
 
-$primary-color: #5A51FE;
-$secondary-color: #8751FE;
+$primary-color: #1DA1AB;
+$secondary-color: #35C15E;
 $text-color: #222;
 $link-color: $primary-color;
 $background-color: #F6F8FA;
@@ -240,7 +240,6 @@ h1, h2 {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: -14px * 0.7;
 
     &--mobile {
       display: none;
