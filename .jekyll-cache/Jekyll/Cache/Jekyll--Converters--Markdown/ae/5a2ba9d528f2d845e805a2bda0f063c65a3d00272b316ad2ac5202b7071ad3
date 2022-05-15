@@ -1,9 +1,4 @@
----
-layout: page
-title: Privacy Policy
-permalink: /privacy/
----
-<div>
+I"¥<div>
 <em>Last Updated: September 12, 2021</em> 
 <p>Peech ("us", "we", or "our") operates the Peech mobile application (the "Service").</p>
 <p>This page informs you of our policies regarding the collection, use, and disclosure of personal data when you use our Service and the choices you have associated with that data. </p>
@@ -69,7 +64,8 @@ permalink: /privacy/
 <h3> Contact Us </h3>
 <p>If you have any questions about this Privacy Policy, please contact us: </p> 
 <ul>
-    <li>By email: info@peechapp.co</li>
+    <li>By email: info@peechapp.com</li>
     <li>Via our Facebook page: <a href="https://www.facebook.com/peechapp">https://www.facebook.com/peechapp</a> </li>
 </ul>
 </div>
+:ET

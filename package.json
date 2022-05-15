@@ -9,9 +9,8 @@
   "scripts": {
     "start": "npm run-script clean:project && webpack --env config=dev --progress --profile --color && concurrently \"webpack-dev-server --env config=dev\" \"bundle exec jekyll serve\"",
     "build": "npm run-script clean:project && cross-env NODE_ENV=production webpack --env config=prod --progress --profile --color && cross-env JEKYLL_ENV=production bundle exec jekyll build",
-    "build:pwa": "npm run-script clean:project && cross-env NODE_ENV=production webpack --env config=pwa --progress --profile --color && cross-env JEKYLL_ENV=pwa bundle exec jekyll build && workbox generateSW config/sw.config.js --verbose",
-    "serve:dist": "http-server _site",
-    "clean:project": "rimraf ./_site ./assets"
+    "serve:dist": "http-server docs",
+    "clean:project": "rimraf ./docs ./assets"
   },
   "devDependencies": {
     "@babel/core": "^7.15.5",

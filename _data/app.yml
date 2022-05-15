@@ -7,6 +7,8 @@ full_description: 'The app that is capable of reading aloud any content:<br>
 <br>- Great natural sounding voices
 <br>- Supporting more than 60 languages'
 iOS: https://apple.co/3yEjiDe
+web: false
+android: false
 screenshots:
   - 1.png
   - 2.png
