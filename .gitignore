@@ -3,3 +3,4 @@ dist/
 _site/
 .jekyll-cache/
 ./assets/
+./download/node_modules
