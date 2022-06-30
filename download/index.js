@@ -11,14 +11,22 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
     }
 
-    const afSub1 = {
-        keys: ['fbclid'],
-        defaultValue: ''
-    };
+    const afSub1 = { keys: ['fbclid'], defaultValue: '' };
+    const mediaSource = { keys: ["inmedia", "utm_source"], defaultValue: 'no_media_source' };
+    const channel = {keys: ["channel", "utm_channel"]};
+    const campaign = {keys: ["campaign", "utm_campaign"]};
+    const ad = {keys: ["adgroup", "utm_ad"]};
+    const adSet = {keys: ["creative", "utm_adset"]};
+
     const { clickURL } = AF_SMART_SCRIPT.generateOneLinkURL({
         oneLinkURL,
         afParameters: {
             afSub1,
+            mediaSource,
+            channel,
+            campaign,
+            ad,
+            adSet,
         }
     });
 
