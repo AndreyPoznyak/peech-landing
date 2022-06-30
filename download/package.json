@@ -1,5 +1,5 @@
 {
-    "name": "peech-landing",
+    "name": "peech-web2app",
     "version": "0.0.1",
     "scripts": {
         "start": "webpack-dev-server --config webpack.dev.js --mode development",
@@ -17,7 +17,6 @@
         "autoprefixer": "^10.3.6",
         "copy-webpack-plugin": "^9.0.1",
         "css-loader": "^6.3.0",
-        "favicons-webpack-plugin": "^5.0.2",
         "html-webpack-plugin": "^5.3.2",
         "http-server": "^13.0.2",
         "mini-css-extract-plugin": "^2.3.0",

@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
-  entry: "./src/index.js",
+  entry: "./index.js",
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
@@ -34,12 +34,6 @@ module.exports = {
         environment: 'development',
       },
       inject: true,
-    }),
-    new CopyPlugin({
-      patterns: [
-        "pages",
-        "CNAME"
-      ],
     }),
   ],
 };
