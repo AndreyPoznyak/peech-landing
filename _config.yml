@@ -5,7 +5,7 @@
 
 title: Peech
 email: info@peechapp.co
-description: Text to speech
+description: text to speech
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://peechapp.co" # the base hostname & protocol for your site, e.g. http://example.com
 theme_color: '#1da1ab'
