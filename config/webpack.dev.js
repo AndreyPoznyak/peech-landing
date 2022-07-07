@@ -18,7 +18,7 @@ module.exports = Merge(CommonConfig, {
         host: 'localhost',
         port: 3000,
         proxy: 'http://localhost:8080',
-        files: ['_site', '_src'],
+        files: ['docs', '_src'],
       },
       {
         reload: false,
@@ -29,7 +29,7 @@ module.exports = Merge(CommonConfig, {
   module: {},
   devServer: {
     static: {
-      directory: path.resolve('_site'),
+      directory: path.resolve('docs'),
     },
     hot: true,
     client: {

@@ -1,5 +1,5 @@
 module.exports = {
-  swDest: '_site/service-worker.js',
+  swDest: 'docs/service-worker.js',
   globPatterns: [
     'assets/**.css',
     '**.html',
@@ -8,11 +8,11 @@ module.exports = {
     'assets/**.js',
   ],
   modifyURLPrefix: {
-    '_site/': '',
+    'docs/': '',
   },
   runtimeCaching: [{
     urlPattern: '/',
     handler: 'NetworkFirst',
   }],
-  globDirectory: '_site',
+  globDirectory: 'docs',
 };
