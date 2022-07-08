@@ -2116,6 +2116,9 @@ QRCode();
     var mediaSource = _parameters$afParamet.mediaSource,
         campaign = _parameters$afParamet.campaign,
         channel = _parameters$afParamet.channel,
+        campaignId = _parameters$afParamet.campaignId,
+        adsetId = _parameters$afParamet.adsetId,
+        adId = _parameters$afParamet.adId,
         ad = _parameters$afParamet.ad,
         adSet = _parameters$afParamet.adSet,
         deepLinkValue = _parameters$afParamet.deepLinkValue,
@@ -2178,6 +2181,18 @@ QRCode();
 
     if (campaign) {
       afParams['c'] = getParameterValue(currentURLParams, campaign);
+    }
+
+    if (campaignId) {
+      afParams['af_c_id'] = getParameterValue(currentURLParams, campaignId);
+    }
+
+    if (adsetId) {
+      afParams['af_adset_id'] = getParameterValue(currentURLParams, adsetId);
+    }
+
+    if (adId) {
+      afParams['af_ad_id'] = getParameterValue(currentURLParams, adId);
     }
 
     if (channel) {

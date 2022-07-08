@@ -19,9 +19,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const campaign = {keys: ["campaign", "utm_campaign"]};
     const ad = {keys: ["utm_term", "utm_ad"]};
     const adSet = {keys: ["utm_content", "utm_adset", "utm_adset_name"]};
-    const af_c_id = {keys: ["campaign_id", "utm_campaign_id"]};
-    const af_adset_id = {keys: ["adset_id"]};
-    const af_ad_id = {keys: ["ad_id"]};
+    const campaignId = {keys: ["campaign_id", "utm_campaign_id"]};
+    const adsetId = {keys: ["adset_id"]};
+    const adId = {keys: ["ad_id"]};
 
     const { clickURL } = AF_SMART_SCRIPT.generateOneLinkURL({
         oneLinkURL,
@@ -34,11 +34,15 @@ document.addEventListener('DOMContentLoaded', () => {
             campaign,
             ad,
             adSet,
-            af_c_id,
-            af_adset_id,
-            af_ad_id,
+            campaignId,
+            adsetId,
+            adId,
         }
     });
 
+    console.log(clickURL);
+
     linkEl.href = clickURL;
 });
+
+//?utm_source=aaa&utm_medium=cpc&utm_campaign={{campaign.name}}&utm_content={{adset.name}}&utm_term={{ad.name}}&campaign_id={{campaign.id}}&adset_id={{adset.id}}&ad_id={{ad.id}}&placement={{site_source_name}}-{{placement}}
