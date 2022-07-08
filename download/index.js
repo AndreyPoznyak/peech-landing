@@ -12,25 +12,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     const afSub1 = { keys: ['fbclid'], defaultValue: '' };
-    const mediaSource = { keys: ["inmedia", "utm_source"], defaultValue: 'no_media_source' };
-    const channel = {keys: ["channel", "utm_channel"]};
+    const afSub2 = { keys: ['gclid'], defaultValue: '' };
+    const afSub3 = { keys: ['placement'], defaultValue: '' };
+    const mediaSource = { keys: ["utm_source"], defaultValue: 'no_media_source' };
+    const channel = {keys: ["utm_medium", "utm_channel"]};
     const campaign = {keys: ["campaign", "utm_campaign"]};
-    const ad = {keys: ["adgroup", "utm_ad"]};
-    const adSet = {keys: ["creative", "utm_adset"]};
+    const ad = {keys: ["utm_term", "utm_ad"]};
+    const adSet = {keys: ["utm_content", "utm_adset", "utm_adset_name"]};
+    const af_c_id = {keys: ["campaign_id", "utm_campaign_id"]};
+    const af_adset_id = {keys: ["adset_id"]};
+    const af_ad_id = {keys: ["ad_id"]};
 
     const { clickURL } = AF_SMART_SCRIPT.generateOneLinkURL({
         oneLinkURL,
         afParameters: {
             afSub1,
+            afSub2,
+            afSub3,
             mediaSource,
             channel,
             campaign,
             ad,
             adSet,
+            af_c_id,
+            af_adset_id,
+            af_ad_id,
         }
     });
-
-    console.log(clickURL);
 
     linkEl.href = clickURL;
 });
