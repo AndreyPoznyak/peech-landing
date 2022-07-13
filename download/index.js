@@ -2,6 +2,8 @@ import './index.scss';
 
 const getCookieValue = (name) => document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || '';
 
+//TODO: set the language based on ?language
+
 document.addEventListener('DOMContentLoaded', () => {
     const oneLinkURL = "https://peech.onelink.me/mjNH/";
     const linkEl = document.querySelector('.store-link');
