@@ -1,13 +1,27 @@
 import './index.scss';
 
+const translations = {
+    it: {
+        link: '',
+        text: '',
+        stats: '',
+    },
+    es: {
+        link: '',
+        text: '',
+        stats: '',
+    },
+    en: {
+        link: '',
+        text: '',
+        stats: '',
+    }
+}
+
 const getCookieValue = (name) => document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || '';
-
-//TODO: set the language based on ?language
-
-document.addEventListener('DOMContentLoaded', () => {
+const setClickURL = (urlParams) => {
     const oneLinkURL = "https://peech.onelink.me/mjNH/";
     const linkEl = document.querySelector('.store-link');
-    const urlParams = new URLSearchParams(location.search);
     const facebookClickId = getCookieValue('_fbc') || urlParams.get('fbclid') || '';
     const facebookBrowserId = getCookieValue('_fbp') || '';
     const afParams = {
@@ -34,4 +48,35 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(clickURL);
 
     linkEl.href = clickURL;
+}
+const setTranslations = (language) => {
+    if (!language) {
+        return;
+    }
+
+    const linkEl = document.querySelector('.store-link');
+    const userStatsEl = document.querySelector('.users-stats');
+    const textEl = document.querySelector('.text');
+
+    let languageCode = 'en';
+
+    switch (language) {
+        case 'it':
+            languageCode = 'it';
+            break;
+        case 'es':
+            languageCode = 'es';
+            break;
+        default:
+            languageCode = 'en';
+            break;
+    }
+};
+
+document.addEventListener('DOMContentLoaded', () => {
+    const urlParams = new URLSearchParams(location.search);
+
+    setClickURL(urlParams);
+    setTimeout(() => setClickURL(urlParams), 1000); //this is a hack in case the cookie was updated
+    setTranslations(urlParams.get('language'));
 });
