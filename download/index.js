@@ -1,11 +1,10 @@
 import './index.scss';
 import { setTranslations } from './src/l10n';
-import { setClickURL } from './src/link';
+import { getClickURL } from './src/link';
 
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(location.search);
 
-    setClickURL(urlParams);
-    setTimeout(() => setClickURL(urlParams), 1000); //this is a hack in case the cookie was updated
+    setTimeout(() => window.location.href = getClickURL(urlParams), 2500);
     setTranslations(urlParams.get('language'));
 });

@@ -1,8 +1,7 @@
 const getCookieValue = (name) => document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || '';
 
-export const setClickURL = (urlParams) => {
+export const getClickURL = (urlParams) => {
     const oneLinkURL = "https://peech.onelink.me/mjNH/";
-    const linkEl = document.querySelector('.store-link');
     const facebookClickId = getCookieValue('_fbc') || urlParams.get('fbclid') || '';
     const facebookBrowserId = getCookieValue('_fbp') || '';
     const afParams = {
@@ -24,9 +23,5 @@ export const setClickURL = (urlParams) => {
         .filter(key => !!afParams[key])
         .map(key => `${key}=${afParams[key]}`).join('&');
 
-    const clickURL = `${oneLinkURL}?${queryString}`;
-
-    console.log(clickURL);
-
-    linkEl.href = clickURL;
+    return `${oneLinkURL}?${queryString}`;
 }
