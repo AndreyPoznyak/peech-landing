@@ -3,26 +3,25 @@ const translations = {
         link: 'Download on the AppStore',
         text: 'You are one tap away from getting the app...',
         stats: '250k+ users',
+        redirect: 'You are being redirected to the AppStore'
     },
     it: {
         link: "Scaricare dall'App Store",
         text: 'Sei solo un passo da noi',
         stats: '250k+ utenti',
+        redirect: "Sarai reindirizzato da AppStore tra 3, 2, 1"
     },
     es: {
         link: 'Descargar en la App Store',
         text: 'Estás a un toque de obtener la aplicación...',
         stats: '250k+ usuarios',
+        redirect: 'Será redirigido a AppStore en 3, 2, 1'
     },
 }
 
 export const setTranslations = (language) => {
-    if (!language) {
-        return;
-    }
-
-    const linkEl = document.querySelector('.store-link');
-    const userStatsEl = document.querySelector('.users-stats');
+    //const linkEl = document.querySelector('.store-link');
+    //const userStatsEl = document.querySelector('.users-stats');
     const textEl = document.querySelector('.text');
 
     let languageCode = 'en';
@@ -46,7 +45,9 @@ export const setTranslations = (language) => {
         return;
     }
 
-    linkEl.innerHTML = locales.link;
-    userStatsEl.innerHTML = locales.stats;
-    textEl.innerHTML = locales.text;
+    console.log(locales.redirect)
+
+    //linkEl.innerHTML = locales.link;
+    //userStatsEl.innerHTML = locales.stats;
+    textEl.innerHTML = locales.redirect;
 };
