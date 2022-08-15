@@ -72,4 +72,5 @@ permalink: /privacy/
     <li>By email: info@peechapp.co</li>
     <li>Via our Facebook page: <a href="https://www.facebook.com/peechapp">https://www.facebook.com/peechapp</a> </li>
 </ul>
+<p>Dopefin Limited, All Rights Reserved</p>
 </div>
