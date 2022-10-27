@@ -45,8 +45,6 @@ export const setTranslations = (language) => {
         return;
     }
 
-    console.log(locales.redirect)
-
     //linkEl.innerHTML = locales.link;
     //userStatsEl.innerHTML = locales.stats;
     textEl.innerHTML = locales.redirect;
