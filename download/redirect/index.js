@@ -4,7 +4,11 @@ import { getClickURL } from '../link';
 
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(location.search);
-
-    setTimeout(() => window.location.href = getClickURL(urlParams), 2500);
+    const fbq = fbq || (() => {});
+    setTimeout(() => {
+        fbq('track', 'StoreRedirect');
+        navigator.clipboard.writeText(`peechapp://${location.search}`);
+        window.location.href = getClickURL(urlParams);
+    }, 2500);
     setTranslations(urlParams.get('language'));
 });

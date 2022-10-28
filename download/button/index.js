@@ -10,5 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
     setTranslations(urlParams.get('language'));
 
     linkEl.href = link;
-    document.body.addEventListener('click', () => window.location.href = link); 
+
+    const fbq = fbq || (() => {});
+    document.body.addEventListener('click', () => {
+        fbq('track', 'StoreRedirect');
+        navigator.clipboard.writeText(`peechapp://${location.search}`);
+        window.location.href = link;
+    }); 
 });
