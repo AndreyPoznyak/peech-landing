@@ -11,9 +11,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     linkEl.href = link;
 
-    const fbq = fbq || (() => {});
     document.body.addEventListener('click', () => {
-        fbq('track', 'StoreRedirect');
+        if (window.fbq) {
+            fbq('track', 'StoreRedirect');
+        }
         navigator.clipboard.writeText(`peechapp://${location.search}`);
         window.location.href = link;
     }); 
