@@ -3,10 +3,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require("copy-webpack-plugin");
 //const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const buildPath = path.resolve(__dirname, '../docs/download/');
+//redirect or button
+const landing = process.env.landing || 'redirect';
+const buildFolder = landing === 'redirect' ? 'download1' : 'download2';
+const buildPath = path.resolve(__dirname, `../docs/${buildFolder}/`);
 
 module.exports = {
-    entry: "./index.js",
+    entry: `./${landing}/index.js`,
   output: {
     filename: "[name].[contenthash].js",
     path: buildPath,
@@ -26,7 +29,7 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './index.html',
+            template: `./${landing}/index.html`,
             templateParameters: {
                 environment: 'production',
             },

@@ -2,8 +2,11 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require("copy-webpack-plugin");
 
+//redirect or button
+const landing = process.env.landing || 'redirect';
+
 module.exports = {
-  entry: "./index.js",
+  entry: `./${landing}/index.js`,
   output: {
     filename: "[name].[contenthash].js",
     path: path.resolve(__dirname, "dist"),
@@ -29,7 +32,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      template: "./index.html",
+      template: `./${landing}/index.html`,
       templateParameters: {
         environment: 'development',
       },
