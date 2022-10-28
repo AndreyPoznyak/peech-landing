@@ -50,28 +50,12 @@ body {
     flex-basis: 300px;
 }
 
-.rating-container {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 30px;
-}
-
-.rating {
-    height: 30px;
-    font-family: star-rating;
-    text-align: center;
-    line-height: 30px;
-    font-size: 20px;
-    color: #FFC700;
-}
-
 .title {
-    text-align: center;
-    font-weight: 400;
-    font-size: 26px;
-    max-width: 80%;
-    margin-top: 10px;
+  text-align: center;
+  font-weight: 400;
+  font-size: 26px;
+  max-width: 80%;
+  margin-top: 10px;
 }
 
 .subtitle {
@@ -82,8 +66,43 @@ body {
   margin-top: 20px;
 }
 
+.rating-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 24px;
+
+  div {
+    margin: 8px;
+  }
+
+  .appstore-icon {
+    background-image: url('../assets/appstore_icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    width: 17px;
+    height: 17px;
+    border-radius: 4px;
+  }
+
+  .users-stats {
+    font-weight: 400;
+    font-size: 14px;
+  }
+
+  .rating {
+      height: 30px;
+      font-family: star-rating;
+      text-align: center;
+      line-height: 30px;
+      font-size: 20px;
+      color: #FFC700;
+  }
+}
+
 .button {
-  margin-top: 30px;
+  margin-top: 24px;
   max-width: 300px;
   width: 80%;
   height: 60px;
