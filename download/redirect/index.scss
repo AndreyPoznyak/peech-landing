@@ -72,7 +72,8 @@ body {
         width: 8px;
         height: 8px;
         border-radius: 50%;
-        background: rgba(38, 39, 47, 0.3);
+        //background: rgba(38, 39, 47, 0.3);
+        background: #26272F;
         animation: lds-grid 1.2s linear infinite;
       }
 
@@ -100,6 +101,6 @@ body {
     opacity: 1;
   }
   50% {
-    opacity: 0.5;
+    opacity: 0.3;
   }
 }

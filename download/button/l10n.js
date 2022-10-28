@@ -1,24 +1,29 @@
 const translations = {
     en: {
         link: 'Go to App Store',
-        text: 'You are one tap away from getting the app...',
-        stats: '500K+ users',
+        title: 'Enjoy your new reading superpowers',
+        subtitle: 'Read or listen to anything you want whenever you want',
+        stats: '500K+ Users',
     },
     it: {
         link: "Scaricare dall'App Store",
-        text: 'Sei solo un passo da noi',
-        stats: '500K+ utenti',
+        title: 'Enjoy your new reading superpowers',
+        subtitle: 'Read or listen to anything you want whenever you want',
+        stats: '500K+ Utenti',
     },
     es: {
         link: 'Descargar en la App Store',
-        text: 'Estás a un toque de obtener la aplicación...',
-        stats: '500K+ usuarios',
+        title: 'Enjoy your new reading superpowers',
+        subtitle: 'Read or listen to anything you want whenever you want',
+        stats: '500K+ Usuarios',
     },
 }
 
 export const setTranslations = (language) => {
     const linkEl = document.querySelector('.store-link');
     const userStatsEl = document.querySelector('.users-stats');
+    const titleEl = document.querySelector('.title');
+    const subtitleEl = document.querySelector('.subtitle');
 
     let languageCode = 'en';
 
@@ -43,4 +48,6 @@ export const setTranslations = (language) => {
 
     linkEl.innerHTML = locales.link;
     userStatsEl.innerHTML = locales.stats;
+    titleEl.innerHTML = locales.title;
+    subtitleEl.innerHTML = locales.subtitle;
 };
