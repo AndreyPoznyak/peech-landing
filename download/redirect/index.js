@@ -5,6 +5,6 @@ import { getClickURL } from '../link';
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(location.search);
 
-    setTimeout(() => window.location.href = getClickURL(urlParams), 2500000);
+    setTimeout(() => window.location.href = getClickURL(urlParams), 2500);
     setTranslations(urlParams.get('language'));
 });
