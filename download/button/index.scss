@@ -25,7 +25,6 @@
 }
 
 html {
-    height: 100vh;
     background-color: #f7f7f9;
     font-family: 'Poppins', sans-serif;
 }
@@ -38,6 +37,8 @@ body {
     align-items: center;
     box-sizing: border-box;
     overflow: hidden;
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 .app-name-container {
@@ -124,7 +125,7 @@ body {
 
 .button {
   margin-top: 24px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   max-width: 300px;
   width: 80%;
   height: 60px;
@@ -182,7 +183,7 @@ body {
 
   .button {
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     height: 50px;
     line-height: 50px;
   }
