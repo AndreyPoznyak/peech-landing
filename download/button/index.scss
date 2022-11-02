@@ -36,9 +36,6 @@ body {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
-    overflow: hidden;
-    padding-top: env(safe-area-inset-top);
-    padding-bottom: env(safe-area-inset-bottom);
 }
 
 .app-name-container {
