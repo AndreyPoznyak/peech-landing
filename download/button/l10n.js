@@ -6,9 +6,9 @@ const translations = {
         stats: '500K+ Users',
     },
     it: {
-        link: "Scaricare dall'App Store",
-        title: 'Enjoy your new reading superpowers',
-        subtitle: 'Read or listen to anything you want whenever you want',
+        link: "Vai all'App Store",
+        title: 'Goditi i tuoi  nuovi superpoteri di lettura',
+        subtitle: 'Leggi o ascolta tutto quello che vuoi e quando vuoi',
         stats: '500K+ Utenti',
     },
     es: {
