@@ -1,0 +1,28 @@
+.quiz-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  margin-top: 20px;
+
+  color: #26272F;
+  text-align: center;
+
+  .title {
+    height: 36px;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .subtitle {
+    height: 24px;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .primary-button {
+    max-width: 330px;
+  }
+}

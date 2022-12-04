@@ -1,0 +1,11 @@
+<div class="quiz-container">
+  <div class="progress-bar">
+    <div class="progress-thumb" [style.width.%]="100 * (currentIndex + 1) / stepsCount"></div>
+  </div>
+  <app-quiz-step
+    *ngFor="let step of steps"
+    [title]="step.title"
+    [subTitle]="step.subTitle"
+    [options]="step.options"
+  ></app-quiz-step>
+</div>

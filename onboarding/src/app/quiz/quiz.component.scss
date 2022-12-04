@@ -1,0 +1,25 @@
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 500px;
+
+  .progress-bar {
+    margin-top: 12px;
+    margin-left: 30px;
+    margin-right: 30px;
+    width: 100%;
+    max-width: 330px;
+    height: 2px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+
+    .progress-thumb {
+      position: relative;
+      overflow: hidden;
+      height: 100%;
+      background: #21A79E;
+      border-radius: 50px;
+    }
+  }
+}
