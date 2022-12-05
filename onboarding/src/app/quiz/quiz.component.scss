@@ -3,6 +3,8 @@
   flex-direction: column;
   align-items: center;
   max-width: 500px;
+  height: 100%;
+  overflow-y: auto;
 
   .progress-bar {
     margin-top: 12px;
@@ -21,5 +23,11 @@
       background: #21A79E;
       border-radius: 50px;
     }
+  }
+
+  //in general we should not create styles for this... figure it out
+  app-quiz-step {
+    display: flex;
+    flex-grow: 1;
   }
 }

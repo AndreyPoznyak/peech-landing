@@ -9,20 +9,24 @@
   text-align: center;
 
   .title {
-    height: 36px;
     font-weight: 600;
     font-size: 24px;
     line-height: 36px;
   }
 
   .subtitle {
-    height: 24px;
     font-weight: 300;
     font-size: 16px;
     line-height: 24px;
   }
 
+  .options-container {
+    flex-grow: 1;
+  }
+
   .primary-button {
+    width: calc(100% - 60px);
     max-width: 330px;
+    margin-bottom: 20px;
   }
 }

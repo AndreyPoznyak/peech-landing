@@ -1,5 +1,8 @@
 <div class="quiz-step">
   <div class="title">{{ title }}</div>
   <div class="subtitle">{{ subTitle }}</div>
+  <div class="options-container">
+    <div class="quiz-option" *ngFor="let option of options">{{ option }}</div>
+  </div>
   <button class="primary-button" (click)="buttonClicked()">Continue</button>
 </div>
