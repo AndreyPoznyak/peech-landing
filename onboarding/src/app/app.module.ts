@@ -8,6 +8,9 @@ import { QuizComponent } from './quiz/quiz.component';
 import { QuizStepComponent } from './quiz-step/quiz-step.component';
 import { LoginComponent } from './login/login.component';
 import { CheckoutComponent } from './checkout/checkout.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,10 @@ import { CheckoutComponent } from './checkout/checkout.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    //BrowserAnimationsModule,
+    MatListModule,
+    MatButtonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

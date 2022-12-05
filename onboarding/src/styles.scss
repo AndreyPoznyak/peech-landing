@@ -1,7 +1,12 @@
+@import '@angular/material';
+
+html, body { height: 100%; }
+
 body {
+  margin: 0;
   background: #F7F7F9;
 
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Poppins', "Helvetica Neue", sans-serif;
   font-style: normal;
 }
 
@@ -22,4 +27,22 @@ body {
   background: linear-gradient(90deg, #35C15E 0%, #1DA1AB 100%);
   border: 0;
   border-radius: 12px;
+}
+
+.mdc-list-item {
+  text-align: center;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+
+  height: 48px;
+  margin-top: 10px;
+
+  background: #FFFFFF;
+  border-radius: 12px;
+
+  &.mdc-list-item--selected {
+    background: #21A79E;
+    color: #FFFFFF;
+  }
 }
