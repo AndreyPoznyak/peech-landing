@@ -3,9 +3,9 @@
     <div class="progress-thumb" [style.width.%]="100 * (currentIndex + 1) / stepsCount"></div>
   </div>
   <app-quiz-step
-    *ngFor="let step of steps"
     [title]="step.title"
     [subTitle]="step.subTitle"
     [options]="step.options"
+    (stepFinished)="stepFinished($event)"
   ></app-quiz-step>
 </div>

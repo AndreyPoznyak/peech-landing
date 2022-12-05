@@ -13,8 +13,22 @@ const steps: QuizOption[] = [
       'I want to learn about a specific topic',
       'I\'m just browsing',
       'Other',
-    ]
-  }
+    ],
+    isMultiple: false,
+  },
+  {
+    title: 'Select your age',
+    options: [
+      'Younger than 20',
+      '20s',
+      '30s',
+      '40s',
+      '50s',
+      '60s',
+      '70+',
+    ],
+    isMultiple: false,
+  },
 ];
 
 @Component({
@@ -26,5 +40,15 @@ export class QuizComponent {
   @Output() quizFinished = new EventEmitter<void>();
   currentIndex = 0;
   stepsCount = steps.length;
-  steps: QuizOption[] = steps;
+  step = steps[0];
+
+  stepFinished(options: string[]): void {
+    if (this.currentIndex + 1 >= this.stepsCount) {
+      //TODO: go to next stuff in flow via router
+      return;
+    }
+
+    this.currentIndex += 1;
+    this.step = steps[this.currentIndex];
+  }
 }
