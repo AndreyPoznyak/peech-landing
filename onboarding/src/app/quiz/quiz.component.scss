@@ -1,8 +1,15 @@
-.quiz-container {
+:host {
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: calc(100% - 60px);
+}
+
+.quiz-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
   max-width: 500px;
   height: 100%;
   overflow-y: auto;

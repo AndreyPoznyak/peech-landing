@@ -29,6 +29,34 @@ const steps: QuizOption[] = [
     ],
     isMultiple: false,
   },
+  {
+    title: 'When do you read books or listen to podcasts?',
+    options: [
+      'In the morning',
+      'While working out',
+      'On my commute',
+      'While taking a break',
+    ],
+    isMultiple: false,
+  },
+  {
+    title: 'How long do you spend reading or on podcasts each day?',
+    options: [
+      'About 15 mins',
+      '15 - 30 mins',
+      '30 - 60 mins',
+      'More than 1 hour',
+    ],
+    isMultiple: false,
+  },
+  {
+    title: 'What are you interested in?',
+    options: [
+      'Health',
+      'Sports'
+    ],
+    isMultiple: false,
+  },
 ];
 
 @Component({
