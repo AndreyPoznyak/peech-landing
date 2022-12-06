@@ -18,6 +18,8 @@
   color: #26272F;
   text-align: center;
 
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 50%, #FFFFFF 100%);
+
   .login-picture {
     width: 100%;
     flex-grow: 2;
@@ -34,5 +36,39 @@
     font-weight: 300;
     font-size: 24px;
     line-height: 36px;
+  }
+
+  button {
+    margin-top: 16px;
+    border-radius: 12px;
+    height: 56px;
+    border: 0;
+  }
+
+  .apple-button {
+    color: #ffffff;
+    font-size: 20px;
+    background-color: #26272F;
+    width: 320px;
+  }
+
+  .buttons-container {
+    width: 320px;
+
+    button {
+      background-color: #F7F7F9;
+      width: calc(50% - 4px);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 24px;
+    }
+
+    .facebook-button {
+      background-image: url(../../assets/facebook.png);
+    }
+
+    .google-button {
+      background-image: url(../../assets/google.png);
+    }
   }
 }
