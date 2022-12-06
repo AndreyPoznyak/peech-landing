@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import {MatListModule} from '@angular/material/list';
 import { FormsModule } from '@angular/forms';
+import { PaywallComponent } from './paywall/paywall.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     QuizComponent,
     QuizStepComponent,
     LoginComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    PaywallComponent
   ],
   imports: [
     BrowserModule,

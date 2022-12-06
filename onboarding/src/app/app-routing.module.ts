@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { QuizComponent } from './quiz/quiz.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { LoginComponent } from './login/login.component';
+import { PaywallComponent } from './paywall/paywall.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,9 @@ const routes: Routes = [
   }, {
     path: 'checkout',
     component: CheckoutComponent,
+  }, {
+    path: 'paywall',
+    component: PaywallComponent,
   }, {
     path: 'login',
     component: LoginComponent
