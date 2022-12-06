@@ -17,8 +17,6 @@
 
   .flow-container {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    flex-grow: 1;
+    height: calc(100% - 88px);
   }
 }
