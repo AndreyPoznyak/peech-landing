@@ -8,7 +8,6 @@
 .login-container {
   width: 100%;
   height: 100%;
-  max-width: 500px;
   overflow: hidden;
 
   display: flex;
@@ -22,7 +21,8 @@
 
   .login-picture {
     width: 100%;
-    flex-grow: 2;
+    max-height: 540px;
+    object-fit: contain;
   }
 
   .title {
@@ -43,6 +43,7 @@
     border-radius: 12px;
     height: 56px;
     border: 0;
+    cursor: pointer;
   }
 
   .apple-button {
@@ -54,6 +55,9 @@
 
   .buttons-container {
     width: 320px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
 
     button {
       background-color: #F7F7F9;
