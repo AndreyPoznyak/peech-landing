@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 import { QuizOption } from '../quiz-step/quiz-step.component';
 
 const steps: QuizOption[] = [
@@ -70,9 +71,11 @@ export class QuizComponent {
   stepsCount = steps.length;
   step = steps[0];
 
+  constructor(private router: Router) {}
+
   stepFinished(options: string[]): void {
     if (this.currentIndex + 1 >= this.stepsCount) {
-      //TODO: go to next stuff in flow via router
+      this.router.navigate(['login']);
       return;
     }
 
