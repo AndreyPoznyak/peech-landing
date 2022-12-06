@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+import { AuthProviderType, AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,19 +8,18 @@ import { AuthService } from '../auth.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  constructor(private authService: AuthService) {}
+  constructor(private authService: AuthService, private router: Router) {}
 
-  async loginClicked(provider: 'google' | 'apple' | 'facebook'): Promise<void> {
-    switch (provider) {
-      case 'apple':
-        break;
-      case 'facebook':
-        break;
-      case 'google':
-        const user = await this.authService.loginGoogle();
+  async loginClicked(provider: AuthProviderType): Promise<void> {
+    const user = await this.authService.login(provider);
 
-        console.log(user);
-        break;
+    if (user) {
+      console.log(user);
+      this.router.navigate(['paywall']);
+      return;
     }
+
+    console.log('Error: Failed to login');
+    //TODO: show the error modal
   }
 }
