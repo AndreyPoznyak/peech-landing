@@ -4,3 +4,5 @@ _site/
 .jekyll-cache/
 ./assets/
 ./download/node_modules
+./onboarding/node_modules
+./onboarding/.angular
