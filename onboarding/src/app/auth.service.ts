@@ -9,6 +9,7 @@ const firebaseConfig: FirebaseOptions = {
 };
 
 export type AuthProviderType = 'facebook' | 'google' | 'apple';
+export interface User { email: string; name?: string; };
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,7 @@ export type AuthProviderType = 'facebook' | 'google' | 'apple';
 export class AuthService {
   constructor() {}
 
-  async login(type: AuthProviderType): Promise<any> {
+  async login(type: AuthProviderType): Promise<User | null> {
     const app = initializeApp(firebaseConfig);
     const auth = getAuth(app);
     const provider = this.getProvider(type);
@@ -27,13 +28,18 @@ export class AuthService {
       const result = await signInWithPopup(auth, provider);
       //const credential = GoogleAuthProvider.credentialFromResult(result);
       //const token = credential?.accessToken;
-      const user = result.user;
+      const { user } = result;
 
-      return user;
+      return {
+        email: user.email || '',
+        name: user.displayName || ''
+      };
     } catch (error) {
       //const credential = GoogleAuthProvider.credentialFromError(error);
 
       console.log(error);
+
+      return null;
     }
   }
 
