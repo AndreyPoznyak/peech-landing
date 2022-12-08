@@ -1,0 +1,12 @@
+<div class="quiz-step">
+  <div class="title">{{ title }}</div>
+  <div class="subtitle" *ngIf="subTitle">{{ subTitle }}</div>
+  <div class="options-container">
+    <mat-selection-list [(ngModel)]="selectedOptions" [multiple]="isMultiple">
+      <mat-list-option *ngFor="let option of options" [value]="option" [disableRipple]="true">
+        {{ option }}
+      </mat-list-option>
+    </mat-selection-list>
+  </div>
+  <button class="primary-button" (click)="buttonClicked()">Continue</button>
+</div>

@@ -1,0 +1,11 @@
+<div class="quiz-container">
+  <div class="progress-bar">
+    <div class="progress-thumb" [style.width.%]="100 * (currentIndex + 1) / stepsCount"></div>
+  </div>
+  <app-quiz-step
+    [title]="step.title"
+    [subTitle]="step.subTitle"
+    [options]="step.options"
+    (stepFinished)="stepFinished($event)"
+  ></app-quiz-step>
+</div>
