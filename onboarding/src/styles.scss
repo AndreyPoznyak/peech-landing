@@ -6,6 +6,10 @@ body {
 
   font-family: 'Poppins', "Helvetica Neue", sans-serif;
   font-style: normal;
+
+  * {
+    box-sizing: border-box;
+  }
 }
 
 .primary-button {
