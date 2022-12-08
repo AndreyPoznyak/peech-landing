@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setTimeout(() => {
         if (window.fbq) {
-            fbq('track', 'StoreRedirect');
+            fbq('track', 'ViewContent');
         }
 
         window.location.href = getClickURL(urlParams);

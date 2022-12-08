@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     document.body.addEventListener('click', () => {
         if (window.fbq) {
-            fbq('track', 'StoreRedirect');
+            fbq('track', 'ViewContent');
         }
         navigator.clipboard.writeText(`peechapp://${location.search}`);
         window.location.href = link;
