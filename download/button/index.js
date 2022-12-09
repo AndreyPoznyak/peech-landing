@@ -15,6 +15,10 @@ document.addEventListener('DOMContentLoaded', () => {
         if (window.fbq) {
             fbq('track', 'ViewContent');
         }
+        if (window.gtag) {
+            gtag('event', 'StoreRedirect');
+        }
+        
         navigator.clipboard.writeText(`peechapp://${location.search}`);
         window.location.href = link;
     }); 
