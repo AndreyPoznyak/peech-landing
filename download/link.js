@@ -4,6 +4,7 @@ export const getClickURL = (urlParams) => {
     const oneLinkURL = "https://peech.onelink.me/mjNH/";
     const facebookClickId = getCookieValue('_fbc') || urlParams.get('fbclid') || '';
     const facebookBrowserId = getCookieValue('_fbp') || '';
+    const userAgent = navigator.userAgent;
     const afParams = {
         pid: urlParams.get('utm_source') || 'no_media_source',
         c: urlParams.get('utm_campaign'),
@@ -16,7 +17,8 @@ export const getClickURL = (urlParams) => {
         af_sub1: facebookClickId,
         af_sub2: facebookBrowserId,
         af_sub3: urlParams.get('placement'),
-        af_sub4: urlParams.get('gclid'), //google click
+        af_sub4: userAgent,
+        //af_sub4: urlParams.get('gclid'), //google click //TODO: think whether to store it somewhere if needed
     };
 
     const queryString = Object.keys(afParams)
