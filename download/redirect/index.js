@@ -12,8 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
             fbq('track', 'ViewContent');
         }
 
-        window.location.href = getClickURL(urlParams);
-    }, 2500);
+        if (window.gtag) {
+            gtag('event', 'StoreRedirect');
+        }
+
+        setTimeout(() => window.location.href = getClickURL(urlParams), 200);
+    }, 2300);
     
     setTranslations(urlParams.get('language'));
 });
