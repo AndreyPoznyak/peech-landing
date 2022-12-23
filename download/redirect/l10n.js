@@ -4,8 +4,8 @@ const translations = {
         subtitle: 'It takes just a few seconds',
     },
     it: {
-        title: 'You are being redirected to App Store',
-        subtitle: 'It takes just a few seconds',
+        title: 'Sei stato reindirizzato all\'App Store',
+        subtitle: 'Ci vogliono solo pochi secondi',
     },
     es: {
         title: 'You are being redirected to App Store',
