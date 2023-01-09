@@ -1,9 +1,11 @@
 const path = require("path");
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
+//const CopyPlugin = require("copy-webpack-plugin");
 
 //redirect or button
 const landing = process.env.landing || 'redirect';
+const pixel = process.env.pixel || 1;
 
 module.exports = {
   entry: `./${landing}/index.js`,
@@ -31,6 +33,13 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      process: {
+        env: {
+          pixel,
+        }
+      }
+    }),
     new HtmlWebpackPlugin({
       template: `./${landing}/index.html`,
       templateParameters: {

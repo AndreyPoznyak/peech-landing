@@ -4,19 +4,20 @@ import { getClickURL } from '../link';
 
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(location.search);
+    const { pixel } = process.env;
 
     document.body.addEventListener('click', () => navigator.clipboard.writeText(`peechapp://${location.search}`)); //just in case
 
     setTimeout(() => {
-        if (window.fbq) {
+        if (fbq) {
             fbq('track', 'ViewContent');
         }
 
-        if (window.gtag) {
+        if (gtag) {
             gtag('event', 'StoreRedirect');
         }
 
-        setTimeout(() => window.location.href = getClickURL(urlParams), 200);
+        setTimeout(() => window.location.href = getClickURL(urlParams, { pixel }), 200);
     }, 2300);
     
     setTranslations(urlParams.get('language'));

@@ -1,14 +1,15 @@
 import './index.scss';
 import { setTranslations } from './l10n';
 import { getClickURL } from '../link';
+import { initFbPixel } from '../pixel';
 
 const goToStore = (link) => {
     setTimeout(() => window.location.href = link, 200);
 
-    if (window.fbq) {
+    if (fbq) {
         fbq('track', 'ViewContent');
     }
-    if (window.gtag) {
+    if (gtag) {
         gtag('event', 'StoreRedirect');
     }
     
@@ -18,7 +19,10 @@ const goToStore = (link) => {
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(location.search);
     const linkEl = document.querySelector('.store-link');
-    const link = getClickURL(urlParams);
+    const { pixel } = process.env;
+    const link = getClickURL(urlParams, { pixel });
+
+    initFbPixel(pixel);
 
     setTranslations(urlParams.get('language'));
 
@@ -29,5 +33,6 @@ document.addEventListener('DOMContentLoaded', () => {
         event.stopPropagation();
         goToStore(link);
     }); 
+
     document.body.addEventListener('click', () => goToStore(link)); 
 });
