@@ -18,7 +18,7 @@ const getBuildFolder = (landing, pixel) => {
 
 //redirect or button
 const landing = process.env.landing || 'redirect';
-const pixel = process.env.pixel || 1;
+const pixel = parseInt(process.env.pixel || 1);
 const buildPath = path.resolve(__dirname, `../docs/${getBuildFolder(landing, pixel)}/`);
 
 module.exports = {
