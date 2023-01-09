@@ -1,6 +1,6 @@
 const getCookieValue = (name) => document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)')?.pop() || '';
 
-export const getClickURL = (urlParams) => {
+export const getClickURL = (urlParams, customParams) => {
     const oneLinkURL = "https://peech.onelink.me/mjNH/";
     const facebookClickId = getCookieValue('_fbc') || urlParams.get('fbclid') || '';
     const facebookBrowserId = getCookieValue('_fbp') || '';
@@ -18,6 +18,7 @@ export const getClickURL = (urlParams) => {
         af_sub2: facebookBrowserId,
         af_sub3: urlParams.get('placement'),
         af_sub4: userAgent,
+        ...customParams,
         //af_sub4: urlParams.get('gclid'), //google click //TODO: think whether to store it somewhere if needed
     };
 
