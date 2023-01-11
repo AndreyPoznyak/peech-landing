@@ -1,7 +1,6 @@
 import './index.scss';
 import { setTranslations } from './l10n';
 import { getClickURL } from '../link';
-import { initFbPixel } from '../pixel';
 
 const goToStore = (link) => {
     setTimeout(() => window.location.href = link, 200);
@@ -21,8 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const linkEl = document.querySelector('.store-link');
     const { pixel } = process.env;
     const link = getClickURL(urlParams, { pixel });
-
-    initFbPixel(pixel);
 
     setTranslations(urlParams.get('language'));
 

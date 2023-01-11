@@ -1,13 +1,10 @@
 import './index.scss';
 import { setTranslations } from './l10n';
 import { getClickURL } from '../link';
-import { initFbPixel } from '../pixel';
 
 document.addEventListener('DOMContentLoaded', () => {
     const urlParams = new URLSearchParams(location.search);
     const { pixel } = process.env;
-
-    initFbPixel(pixel);
 
     document.body.addEventListener('click', () => navigator.clipboard.writeText(`peechapp://${location.search}`)); //just in case
 

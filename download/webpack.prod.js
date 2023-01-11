@@ -4,6 +4,11 @@ const webpack = require('webpack');
 const CopyPlugin = require("copy-webpack-plugin");
 //const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const ids = {
+    pixel1: '1110330096568660',
+    pixel2: '1206201043607066',
+};
+
 const getBuildFolder = (landing, pixel) => {
     let num = 1;
 
@@ -45,7 +50,7 @@ module.exports = {
             template: `./${landing}/index.html`,
             templateParameters: {
                 environment: 'production',
-                pixel,
+                pixel: pixel === 1 ? ids.pixel1 : ids.pixel2,
             },
             inject: 'head',
         }),
