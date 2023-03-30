@@ -18,6 +18,7 @@ export const getClickURL = (urlParams, customParams) => {
         af_sub2: facebookBrowserId,
         af_sub3: urlParams.get('placement'),
         af_sub4: userAgent,
+        af_ios_store_cpp: urlParams.get('cpp'), //custom product page - App Store
         ...customParams,
         //af_sub4: urlParams.get('gclid'), //google click //TODO: think whether to store it somewhere if needed
     };
