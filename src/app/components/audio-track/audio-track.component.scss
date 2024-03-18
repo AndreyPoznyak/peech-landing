@@ -1,0 +1,53 @@
+.audio-player {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    border: 1px solid #ffffff;
+
+    gap: 16px;
+
+    &.playing {
+      border-color: #31BC6D;
+    }
+
+  .middle {
+    flex-grow: 1;
+
+    .track-title {
+      font-size: 16px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 110%;
+    }
+  }
+  
+  .play-button {
+    width: 40px;
+    height: 40px;
+    border: none;
+    background-color: #4CAF50;
+    color: #ffff;
+    border-radius: 50%;
+    cursor: pointer;
+
+    i {
+        font-size: 20px;
+
+        &.ri-play-fill {
+          margin-left: 2px;
+        }
+    }
+  }
+
+  .speaker-image {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+}

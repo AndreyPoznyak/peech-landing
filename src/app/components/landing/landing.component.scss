@@ -1,0 +1,220 @@
+.top-image {
+    max-width: 240px;
+
+    @media (min-width: 576px) {
+        max-width: 340px;
+    }
+}
+
+.image {
+    background-size: cover; /* Cover the area of the container */
+    background-position: center; /* Center the image within the container */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    width: 100%;
+}
+
+.image-label {
+    color: #ffff;
+    font-size: 1.2rem;
+}
+
+.usecase-images {
+    .image {
+        height: 160px;
+
+        @media (min-width: 768px) {
+            height: 240px;
+        }
+    }
+
+    div:nth-child(1) .image {
+        background-image: url('../../../assets/img/pictures/riding.png');
+
+        .image-label {
+            right: 10px;
+            bottom: 10px;
+        }
+    }
+
+    div:nth-child(2) .image {
+        background-image: url('../../../assets/img/pictures/cooking.png');
+
+        .image-label {
+            left: 10px;
+            top: 10px;
+        }
+    }
+
+    div:nth-child(3) .image {
+        background-image: url('../../../assets/img/pictures/car.png');
+
+        .image-label {
+            right: 10px;
+            bottom: 10px;
+        }
+    }
+
+    div:nth-child(4) .image {
+        background-image: url('../../../assets/img/pictures/woman.png');
+
+        .image-label {
+            left: 10px;
+            top: 10px;
+        }
+    }
+}
+
+.cost-images {
+    .image {
+        height: 240px;
+    }
+
+    .image-label {
+        right: 10px;
+        bottom: 10px;
+        font-size: 24px;
+    }
+
+    div:nth-child(1) .image {
+        background-image: url('../../../assets/img/pictures/book1.png');
+    }
+
+    div:nth-child(2) .image {
+        background-image: url('../../../assets/img/pictures/book2.png');
+    }
+
+    div:nth-child(3) .image {
+        background-image: url('../../../assets/img/pictures/phone.png');
+    }
+
+    div:nth-child(4) .image {
+        background-image: url('../../../assets/img/pictures/netflix.png');
+    }
+}
+
+.text-list {
+    font-size: 1rem;
+    font-weight: 300;
+
+    div {
+        display: flex;
+        align-items: center;
+        position: relative;
+        gap: 16px;
+        margin-bottom: 16px;
+    }
+
+    div:before {
+        content: '';
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #31BC6D;   
+    }
+}
+
+.universities {
+    gap: 20px;
+    height: 40px;
+
+    @media (min-width: 992px) {
+        gap: 32px;
+        height: 48px;
+    }
+
+    animation-name: infiniteScroll;
+    animation-duration: 24s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+
+    .univ-image {
+        flex: none;
+
+        height: 100%;
+        width: auto;
+    }
+}
+
+@keyframes infiniteScroll {
+    0% {
+        transform: translate(0);
+    }
+    100% {
+        transform: translate(-1140px);
+
+        @media (min-width: 992px) {
+            transform: translate(-1440px);
+        }
+    }
+}
+
+.reviews {
+    gap: 30px;
+
+    position: relative;
+    max-height: 900px;
+    overflow: hidden;
+
+    > * {
+        max-width: calc(100% - 60px);
+
+        @media (min-width: 768px) {
+            max-width: calc(50% - 40px);
+        }
+
+        @media (min-width: 1200px) {
+            max-width: calc(33% - 30px);
+        }
+    }
+
+    :after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 100px;
+        background: linear-gradient(to top, #ffffff7c, rgba(255, 255, 255, 0));
+
+        @media (min-width: 768px) {
+            height: 140px;
+        }
+    }
+}
+
+.checkout-container {
+    padding: 8px;
+
+    @media (min-width: 768px) {
+        padding: 20px;
+    }
+}
+
+button.pulsing {
+    animation: pulseAnimation 2s infinite;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+@keyframes pulseAnimation {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(49, 188, 109, 0.7);
+    }
+    70% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 10px rgba(49, 188, 109, 0);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(49, 188, 109, 0);
+    }
+}
+
+.scroll-to-top {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    background-color: #ffff;
+    color: black
+}

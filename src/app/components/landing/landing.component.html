@@ -1,0 +1,114 @@
+<div
+    class="pt-5 pb-50"
+>
+    <div class="row align-items-center">
+        <div class="col-lg-5 d-flex justify-content-center">
+            <img class="top-image" src="assets/img/top2.png">
+        </div>
+        <div class="col-lg-7 mt-20 mb-20">
+            <h1 class="display-3">Listen to Academic Papers on the Go</h1>
+            <div class="lead">Save hours by listening to Papers anywhere, in your spare time</div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 col-lg-6 col-md-6 col-sm-12 mt-10">
+            <app-audio-track imagePath="assets/img/person1.png" audioPath="assets/history.mp3" title="History"></app-audio-track>
+        </div>
+        <div class="col-12 col-lg-6 col-md-6 col-sm-12 mt-10">
+            <app-audio-track imagePath="assets/img/person2.png" audioPath="assets/physics.mp3" title="Physics"></app-audio-track>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-20">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <button mat-raised-button class="pulsing tagus w-100">Claim Your 2-Weeks Trial</button>
+        </div>
+    </div>
+
+    <mat-divider class="mt-25 mb-25"></mat-divider>
+    <div class="row">
+        <h1 class="display-6">Used by <span class="main-color">40K+ Students & Researchers</span> at...</h1>
+    </div>
+    <div class="row mt-30">
+        <div class="universities d-flex align-items-center">
+            <img class="univ-image" [src]="slide" *ngFor="let slide of slides">
+            <img class="univ-image" [src]="slide" *ngFor="let slide of slides">
+        </div>
+        <div class="col-12 mt-20">
+            <p class="lead">... and many more!</p>
+        </div>
+    </div>
+
+    <mat-divider class="mt-25 mb-25"></mat-divider>
+    <div class="row">
+        <h1 class="display-6">The world’s first mobile app <span class="main-color">built for listening to papers</span></h1>
+    </div>
+    <div class="row align-items-center mt-20">
+        <div class="col-lg-6 col-sm-12 d-flex justify-content-center">
+            <img class="top-image" src="assets/img/resources.png">
+        </div>
+        <div class="col-lg-6 col-sm-12 mt-20">
+            <div class="lead">We've carefully hand-crafted the app for students & researchers, including:</div>
+            <div class="mt-15 ps-20 text-list">
+                <div>Lifelike voices, complete with emotion and intonation</div>
+                <div>Easily pronounces technical words in any field</div>
+                <div>Numerous formats supported: PDFs, Docs, E-books, Web Articles and even Photos</div>
+                <div>More than 50 languages supported</div>
+            </div>
+        </div>
+    </div>
+
+    <mat-divider class="mt-25 mb-25"></mat-divider>
+    <div class="row align-items-center">
+        <div class="col-lg-5 light-green-color border-radius p-25 d-flex flex-column">
+            <h5 class="display-6">Just Hit <span class="ri-play-fill main-color"></span> to Try</h5>
+            <app-audio-track imagePath="assets/img/person1.png" audioPath="assets/clinical_med.mp3" title="Clinical Medicine"></app-audio-track>
+            <app-audio-track imagePath="assets/img/person2.png" audioPath="assets/business_management.mp3" title="Business Management"></app-audio-track>
+            <app-audio-track imagePath="assets/img/person4.webp" audioPath="assets/physics.mp3" title="Physics"></app-audio-track>
+            <app-audio-track imagePath="assets/img/person3.webp" audioPath="assets/history.mp3" title="History"></app-audio-track>
+        </div>
+        <div class="col-lg-7 mt-20 mb-20">
+            <h1 class="display-5">"I can't believe it - he <span class="main-color">sounds like a real person</span>"</h1>
+            <div class="lead">We use the latest AI breakthroughs to create human-like voices. They’re easy to listen to and understand, just like an audiobook!</div>
+            <div class="mt-15 ps-20 text-list">
+                <div class="mb-15">Lifelike voices, complete with emotion and intonation</div>
+                <div class="mb-15">Easily pronounces technical words in any field</div>
+                <div class="mb-15">Remove excess text, like references citations, from the audio</div>
+            </div>
+        </div>
+    </div>
+
+    <mat-divider class="mt-25 mb-25"></mat-divider>
+    <div class="row">
+        <h1 class="display-6"><span class="main-color">Save time</span> by choosing which sections to listen to</h1>
+    </div>
+    <div class="row align-items-center mt-20">
+        <div class="col-lg-6 col-sm-12 d-flex justify-content-center">
+            <img class="top-image" src="assets/img/top_library.png">
+        </div>
+        <div class="col-lg-6 col-sm-12 mt-20 mb-20">
+            <div class="lead">You can start listening or, obvisouly, reading from any place in the text</div>
+        </div>
+    </div>
+
+    <mat-divider class="mt-25 mb-25"></mat-divider>
+    <div class="row">
+        <h1 class="display-6"><span class="main-color">Take notes</span> on key ideas with one click</h1>
+    </div>
+    <div class="row align-items-center mt-20">
+        <div class="col-lg-6 col-sm-12 d-flex justify-content-center">
+            <img class="top-image" src="assets/img/top_content.png">
+        </div>
+        <div class="col-lg-6 col-sm-12">
+            <p class="lead">Take notes while on the go, with just one click!</p>
+            <p class="lead">Click the +note button any time you hear a key idea, and the app instantly adds the last few sentences to a notepad.</p>
+            <p class="lead">Export your notes later to <strong>make writing papers a breeze.</strong></p>
+        </div>
+    </div>
+    <div class="row justify-content-center mt-20">
+        <div class="col-lg-3 col-md-6 col-sm-12">
+            <button mat-raised-button class="pulsing tagus w-100">Claim Your 2-Weeks Trial</button>
+        </div>
+    </div>
+
+</div>

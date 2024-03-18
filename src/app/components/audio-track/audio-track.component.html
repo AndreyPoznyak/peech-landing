@@ -1,0 +1,11 @@
+<div class="audio-player d-flex align-items-center justify-content-space-between p-10" [class.playing]="isPlaying">
+    <img src="{{imagePath}}" alt="Speaker" class="speaker-image">
+    <div class="middle">
+      <span class="track-title">{{title}}</span>
+      <div class="waveform" #waveform></div>
+    </div>
+    <button class="play-button p-0" (click)="playPause()">
+      <i class="{{ isPlaying ? 'ri-pause-line' : 'ri-play-fill' }}"></i>
+    </button>
+</div>
+  

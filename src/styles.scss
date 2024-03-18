@@ -1,0 +1,987 @@
+
+// Custom Theming for Angular Material
+// For more information: https://material.angular.io/guide/theming
+@use '@angular/material' as mat;
+// Plus imports for other components in your app.
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat.core();
+
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue. Available color palettes: https://material.io/design/color/
+$tagus-primary: mat.define-palette(mat.$indigo-palette);
+$tagus-accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+
+// The warn palette is optional (defaults to red).
+$tagus-warn: mat.define-palette(mat.$red-palette);
+
+// Create the theme object. A theme consists of configurations for individual
+// theming systems such as "color" or "typography".
+$tagus-theme: mat.define-light-theme((
+    color: (
+        primary: $tagus-primary,
+        accent: $tagus-accent,
+        warn: $tagus-warn,
+    )
+));
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include mat.all-component-themes($tagus-theme);
+
+@font-face {
+    font-family: star-rating;
+    src: url(data:application/x-font-ttf;base64,AAEAAAALAIAAAwAwT1MvMigiLIYAAAC8AAAAYGNtYXAmCyZNAAABHAAAAFRnYXNwAAAAEAAAAXAAAAAIZ2x5ZlNxiKoAAAF4AAABFGhlYWQBHDApAAACjAAAADZoaGVhA+IB6AAAAsQAAAAkaG10eAcAAAAAAALoAAAAHGxvY2EAjADoAAADBAAAABBtYXhwAAoAGAAAAxQAAAAgbmFtZYWP6p0AAAM0AAABaXBvc3QAAwAAAAAEoAAAACAAAwIAAZAABQAAAUwBZgAAAEcBTAFmAAAA9QAZAIQAAAAAAAAAAAAAAAAAAAABAAAgAAAAAAAAAAAAAAAAAABAAAAl0AHg/+D/4AHgACAAAAABAAAAAAAAAAAAAAAgAAAAAAACAAAAAwAAABQAAwABAAAAFAAEAEAAAAAMAAgAAgAEAAEAICXLJdD//f//AAAAAAAgJcslz//9//8AAf/j2jnaNgADAAEAAAAAAAAAAAAAAAAAAQAB//8ADwABAAAAAAAAAAAAAgAANzkBAAAAAAEAAAAAAAAAAAACAAA3OQEAAAAAAQAAAAAAAAAAAAIAADc5AQAAAAACAAD/7QIAAdMACgAVAAABLwEPARcHNxcnNwUHNyc/AR8BBxcnAgCxT0+xgB6enh6A/wBwFlt9ODh9WxZwARkaoKAafLBTU7B8sjp8WBJxcRJYfDoAAAAAAQAA/+0CAAHTAAoAAAEvAQ8BFwc3Fyc3AgCxT0+xgB6enh6AARkaoKAafLBTU7B8AAAAAAIAAP/tAgAB0wAKABIAAAEvAQ8BFwc3Fyc3BTERHwEHFycCALFPT7GAHp6eHoD/ADh9WxZwARkaoKAafLBTU7B8sgEdcRJYfDoAAAABAAAAAQAA1qooUl8PPPUACwIAAAAAAM/+d7YAAAAAz/53tgAA/+0CAAHTAAAACAACAAAAAAAAAAEAAAHg/+AAAAIAAAAAAAIAAAEAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAAAQAAAAIAAAACAAAAAgAAAAAAAAAACgAUAB4ASgBkAIoAAQAAAAcAFgACAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAA4ArgABAAAAAAABABYAAAABAAAAAAACAA4AYwABAAAAAAADABYALAABAAAAAAAEABYAcQABAAAAAAAFABYAFgABAAAAAAAGAAsAQgABAAAAAAAKADQAhwADAAEECQABABYAAAADAAEECQACAA4AYwADAAEECQADABYALAADAAEECQAEABYAcQADAAEECQAFABYAFgADAAEECQAGABYATQADAAEECQAKADQAhwBzAHQAYQByAC0AcgBhAHQAaQBuAGcAVgBlAHIAcwBpAG8AbgAgADEALgAwAHMAdABhAHIALQByAGEAdABpAG4AZ3N0YXItcmF0aW5nAHMAdABhAHIALQByAGEAdABpAG4AZwBSAGUAZwB1AGwAYQByAHMAdABhAHIALQByAGEAdABpAG4AZwBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format('truetype'),url(data:application/font-woff;base64,d09GRk9UVE8AAAUgAAoAAAAABNgAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAABDRkYgAAAA9AAAAWMAAAFjbsVsoU9TLzIAAAJYAAAAYAAAAGAoIiyGY21hcAAAArgAAABUAAAAVCYLJk1nYXNwAAADDAAAAAgAAAAIAAAAEGhlYWQAAAMUAAAANgAAADYBHDApaGhlYQAAA0wAAAAkAAAAJAPiAehobXR4AAADcAAAABwAAAAcBwAAAG1heHAAAAOMAAAABgAAAAYAB1AAbmFtZQAAA5QAAAFpAAABaYWP6p1wb3N0AAAFAAAAACAAAAAgAAMAAAEABAQAAQEBDHN0YXItcmF0aW5nAAECAAEAOvgcAvgbA/gYBB4KABlT/4uLHgoAGVP/i4sMB4tr+JT4dAUdAAAAjg8dAAAAkxEdAAAACR0AAAFaEgAIAQEMFxkbHiMoLXN0YXItcmF0aW5nc3Rhci1yYXRpbmd1MHUxdTIwdTI1Q0J1MjVDRnUyNUQwAAACAYkABQAHAQEEBwoNVn29/JQO/JQO/JQO+5QO+JT3rRX7RaU89zQ8+zT7RXH3FPsQbftE9zLe9zI4bfdE9xT3EAX7lPtGFfsEUaH3EDDj9xGdw/cFw/sF9xF5MDOh+xD7BMUFDviU960V+0WlPPc0PPs0+0Vx9xT7EG37RPcy3vcyOG33RPcU9xAFDviU960V+0WlPPc0PPs0+0Vx9xT7EG37RPcy3vcyOG33RPcU9xAF+5T7RhWLi4v3scP7BfcReTAzofsQ+wTFBQ74lBT4lBWLDAoAAAMCAAGQAAUAAAFMAWYAAABHAUwBZgAAAPUAGQCEAAAAAAAAAAAAAAAAAAAAAQAAIAAAAAAAAAAAAAAAAAAAQAAAJdAB4P/g/+AB4AAgAAAAAQAAAAAAAAAAAAAAIAAAAAAAAgAAAAMAAAAUAAMAAQAAABQABABAAAAADAAIAAIABAABACAlyyXQ//3//wAAAAAAICXLJc///f//AAH/49o52jYAAwABAAAAAAAAAAAAAAAAAAEAAf//AA8AAQAAAAEAAOJjA1tfDzz1AAsCAAAAAADP/ne2AAAAAM/+d7YAAP/tAgAB0wAAAAgAAgAAAAAAAAABAAAB4P/gAAACAAAAAAACAAABAAAAAAAAAAAAAAAAAAAABwAAAAAAAAAAAAAAAAEAAAACAAAAAgAAAAIAAAAAAFAAAAcAAAAAAA4ArgABAAAAAAABABYAAAABAAAAAAACAA4AYwABAAAAAAADABYALAABAAAAAAAEABYAcQABAAAAAAAFABYAFgABAAAAAAAGAAsAQgABAAAAAAAKADQAhwADAAEECQABABYAAAADAAEECQACAA4AYwADAAEECQADABYALAADAAEECQAEABYAcQADAAEECQAFABYAFgADAAEECQAGABYATQADAAEECQAKADQAhwBzAHQAYQByAC0AcgBhAHQAaQBuAGcAVgBlAHIAcwBpAG8AbgAgADEALgAwAHMAdABhAHIALQByAGEAdABpAG4AZ3N0YXItcmF0aW5nAHMAdABhAHIALQByAGEAdABpAG4AZwBSAGUAZwB1AGwAYQByAHMAdABhAHIALQByAGEAdABpAG4AZwBGAG8AbgB0ACAAZwBlAG4AZQByAGEAdABlAGQAIABiAHkAIABJAGMAbwBNAG8AbwBuAC4AAAAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==) format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* You can add global styles to this file, and also import other style files */
+:root {
+    --fontFamily: 'Open Sans', sans-serif;
+    --headingFontFamily: 'Raleway', sans-serif;
+    --heraBlueColor: #31BC6D; //TODO: rename this colors
+    --aareRiverColor: #21A79E;
+    --blackColor: #26272F;
+    --paragraphColor: #26272F;
+    --whiteColor: #ffffff;
+    --fontSize: 15px;
+    --transition: .5s;
+    --borderBoxShadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+    --borderWhiteBoxShadow: rgba(255, 255, 255, 0.05) 0px 6px 24px 0px, rgba(255, 255, 255, 0.08) 0px 0px 0px 1px;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+    color: var(--blackColor);
+    background-color: #ffffff;
+    font: {
+        size: var(--fontSize);
+        family: var(--fontFamily) !important;
+    };
+
+    &.noscroll {
+        overflow: hidden;
+    }
+}
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+    color: var(--blackColor);
+    font: {
+        weight: 700;
+        family: var(--headingFontFamily) !important;
+    };
+    margin: {
+        top: 0;
+        bottom: 15px;
+    };
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+.h1, h1 {
+    font-size: 38px;
+}
+.h2, h2 {
+    font-size: 30px;
+}
+.h3, h3 {
+    font-size: 26px;
+}
+.h4, h4 {
+    font-size: 22px;
+}
+.h5, h5 {
+    font-size: 18px;
+}
+.h6, h6 {
+    font-size: 14px;
+}
+a {
+    transition: var(--transition);
+    color: var(--blackColor);
+    text-decoration: none;
+    outline: 0 !important;
+
+    &:hover {
+        text-decoration: none;
+        color: var(--heraBlueColor);
+    }
+}
+.d-table {
+    width: 100%;
+    height: 100%;
+
+    &-cell {
+        vertical-align: middle;
+    }
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+p {
+    color: var(--paragraphColor);
+    font-size: var(--fontSize);
+    line-height: 1.8;
+    margin: {
+        top: 0;
+        bottom: 15px;
+    };
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+input {
+    font: {
+        family: var(--fontFamily);
+        size: var(--fontSize);
+    };
+}
+button {
+    font: {
+        family: var(--fontFamily) !important;
+        size: var(--fontSize) !important;
+    };
+}
+
+// Default BTN
+.default-btn {
+    border: 0;
+    font-size: 13.5px;
+    border-radius: 5px;
+    color: var(--whiteColor);
+    padding: 11px 31px 11px 15px;
+    transition: var(--transition);
+    background-color: var(--heraBlueColor);
+
+    i {
+        transform: translateY(-50%);
+        position: absolute;
+        margin-top: 2px;
+        line-height: 1;
+        right: 15px;
+        top: 50%;
+    }
+    &:hover {
+        background-color: var(--aareRiverColor);
+        color: var(--whiteColor);
+    }
+}
+
+// Utilities CSS
+@import "./utilities";
+
+// UI Kit CSS
+@import "./ui-kit";
+
+// Mat Card CSS
+.mat-mdc-card {
+    &.tagus-card {
+        box-shadow: 0px 4px 20px rgba(47, 143, 232, 0.07);
+        background-color: var(--whiteColor) !important;
+        border-radius: 10px !important;
+        display: block !important;
+        border: none !important;
+        padding: 25px;
+
+        .mat-mdc-card-header {
+            padding: 0;
+            margin-bottom: 20px;
+            align-items: center;
+            justify-content: space-between;
+
+            .btn {
+                width: auto;
+                cursor: pointer;
+                max-width: unset;
+                min-height: unset;
+                max-height: unset;
+                height: auto !important;
+                min-width: unset !important;
+                color: var(--paragraphColor);
+                padding: 0 0 2px 23px !important;
+                font-size: var(--fontSize) !important;
+
+                &::before {
+                    left: 0;
+                    top: 50%;
+                    content: "\f105";
+                    position: absolute;
+                    color: var(--blackColor);
+                    transform: translateY(-50%);
+                    font: {
+                        family: flaticon_tagus;
+                        weight: 700;
+                        size: 14px;
+                    };
+                }
+                .mdc-button__ripple, .mat-mdc-button-persistent-ripple, .mat-ripple {
+                    display: none;
+                }
+            }
+            .dot-btn {
+                top: 2px;
+                width: auto;
+                cursor: pointer;
+                line-height: .01;
+                max-width: unset;
+                min-height: unset;
+                max-height: unset;
+                padding: 0 !important;
+                height: auto !important;
+                font-size: 25px !important;
+                min-width: unset !important;
+                color: var(--paragraphColor);
+                transition: var(--transition);
+                
+                &:hover {
+                    color: var(--heraBlueColor);
+                }
+                .mdc-button__ripple, .mat-mdc-button-persistent-ripple, .mat-ripple {
+                    display: none;
+                }
+            }
+            .sub-title {
+                color: var(--paragraphColor);
+            }
+            .default-btn {
+                padding: 14px 25px 14px 46px !important;
+                font: {
+                    weight: 600 !important;
+                    size: 14px !important;
+                };
+                .mdc-button__label {
+                    display: block;
+                    position: unset;
+                }
+                i {
+                    top: 50%;
+                    left: 22px;
+                    right: auto;
+                    margin-top: 0;
+                    line-height: 1;
+                    font-size: 18px;
+                    position: absolute;
+                    transform: translateY(-50%);
+                }
+                &.small {
+                    padding: 11px 20px 11px 39px !important;
+
+                    i {
+                        left: 18px;
+                        font-size: 16px;
+                    }
+                }
+            }
+            .search-box {
+                width: 280px;
+
+                .input-search {
+                    background-color: #f5F7fa;
+                    padding: 0 15px 2px 15px;
+                    color: var(--blackColor);
+                    outline: 0 !important;
+                    border-radius: 5px;
+                    height: 41px;
+                    width: 100%;
+                    border: 0;
+                    
+                    &::placeholder {
+                        color: #A9A9C8;
+                        transition: var(--transition);
+                    }
+                    &:focus {
+                        &::placeholder {
+                            color: transparent;
+                        }
+                    }
+                }
+                button {
+                    top: 50%;
+                    padding: 0;
+                    right: 20px;
+                    border: none;
+                    line-height: 1;
+                    cursor: pointer;
+                    position: absolute;
+                    font-size: 22px !important;
+                    transform: translateY(-50%);
+                    color: var(--heraBlueColor);
+                    background-color: transparent;
+                    transition: var(--transition);
+        
+                    &:hover {
+                        color: var(--blackColor);
+                    }
+                }
+            }
+            &.border-bottom {
+                padding-bottom: 20px;
+                border-bottom: 1px solid #eef0f7;
+            }
+            .mat-mdc-card-header-text {
+                display: none;
+            }
+            .info-list {
+                .mat-mdc-icon-button {
+                    .mat-mdc-button-persistent-ripple {
+                        border-radius: 4px;
+                    }
+                }
+            }
+        }
+        .mat-mdc-card-content {
+            padding: 0;
+
+            .tagus-mat-table {
+                .mat-mdc-table {
+                    .mdc-data-table__header-row {
+                        .mdc-data-table__header-cell {
+                            text-align: center;
+                            font-weight: 600;
+                            overflow: unset;
+                            border: none;
+                            padding: {
+                                top: 16px;
+                                bottom: 16px;
+                            };
+                            .mat-mdc-checkbox {
+                                .mdc-checkbox {
+                                    margin-left: -10px;
+    
+                                    .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+                                        border-color: #a9a9c8;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .mdc-data-table__content {
+                        .mdc-data-table__row {
+                            .mdc-data-table__cell {
+                                overflow: unset;
+                                padding: 15px 20px;
+                                text-align: center;
+                                white-space: nowrap;
+                                color: var(--paragraphColor);
+                                border-bottom-color: #f7faff;
+
+                                .product-info {
+                                    color: var(--paragraphColor);
+                                    font: {
+                                        weight: 600;
+                                        family: var(--headingFontFamily);
+                                    };
+                                    img {
+                                        width: 48px;
+                                        margin-right: 12px;
+                                        border-radius: 10px;
+                                    }
+                                    &:hover {
+                                        color: var(--heraBlueColor);
+                                    }
+                                }
+                                .badge {
+                                    font-size: 14px;
+                                    border-radius: 4px;
+                                    padding: 4px 13px 5px;
+                                    color: var(--heraBlueColor);
+                                    background: rgba(117, 127, 239, 0.1);
+
+                                    &.delivered {
+                                        background: rgba(0, 182, 155, 0.1);
+                                        color: #00b69b;
+                                    }
+                                    &.outOfStock {
+                                        color: #ee368c;
+                                        background: rgba(238, 54, 140, 0.1);
+                                    }
+                                }
+                                .mat-mdc-checkbox {
+                                    .mdc-checkbox {
+                                        margin-left: -10px;
+        
+                                        .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true])~.mdc-checkbox__background {
+                                            border-color: #a9a9c8;
+                                        }
+                                    }
+                                }
+                                .dot-btn {
+                                    width: 35px;
+                                    line-height: 30px;
+                                    padding: 0 !important;
+                                    height: 30px !important;
+                                    color: var(--blackColor);
+                                    font-size: 18px !important;
+                                    min-width: unset !important;
+                                    border-radius: 4px !important;
+                                    display: inline-block !important;
+                                    background-color: #F3F6F9 !important;
+                                }
+                                .rating {
+                                    i {
+                                        line-height: 1;
+                                        color: #FFBC2B;
+                                        margin: {
+                                            left: 2px;
+                                            right: 2px;
+                                        };
+                                    }
+                                }
+                                .colors {
+                                    span {
+                                        width: 10px;
+                                        height: 10px;
+                                        font-size: 0;
+                                        border-radius: 50%;
+                                        display: inline-block;
+                                        border: 1px solid #eeeeee;
+                                        background-color: var(--whiteColor);
+                                        margin: {
+                                            left: 2px;
+                                            right: 2px;
+                                        };
+                                        &.red {
+                                            background-color: red;
+                                            border-color: red;
+                                        }
+                                        &.blue {
+                                            background-color: blue;
+                                            border-color: blue;
+                                        }
+                                        &.green {
+                                            background-color: green;
+                                            border-color: green;
+                                        }
+                                        &.orange {
+                                            background-color: orange;
+                                            border-color: orange;
+                                        }
+                                        &.black {
+                                            background-color: black;
+                                            border-color: black;
+                                        }
+                                        &.yellow {
+                                            background-color: yellow;
+                                            border-color: yellow;
+                                        }
+                                        &.purple {
+                                            background-color: purple;
+                                            border-color: purple;
+                                        }
+                                        &.brown {
+                                            background-color: brown;
+                                            border-color: brown;
+                                        }
+                                        &.pink {
+                                            background-color: pink;
+                                            border-color: pink;
+                                        }
+                                        &.maroon {
+                                            background-color: maroon;
+                                            border-color: maroon;
+                                        }
+                                        &.violet {
+                                            background-color: violet;
+                                            border-color: violet;
+                                        }
+                                        &:first-child {
+                                            margin-left: 0;
+                                        }
+                                        &:last-child {
+                                            margin-right: 0;
+                                        }
+                                    }
+                                }
+                            }
+                            &:last-child {
+                                .mdc-data-table__cell {
+                                    border-bottom: 1px solid #f7faff;
+                                }
+                            }
+                        }
+                    }
+                    .mat-sort-header-container {
+                        justify-content: center;
+
+                        .mat-sort-header-arrow {
+                            top: 2px;
+                        }
+                    }
+                }
+
+                
+                &::-webkit-scrollbar {
+                    -webkit-appearance: none;
+                    
+                    &:vertical {
+                        width: 10px;
+                    }
+                    &:horizontal {
+                        height: 10px;
+                    }
+                }
+                &::-webkit-scrollbar-thumb {
+                    border-radius: 10px;
+                    border: 2px solid var(--whiteColor);
+                    background-color: rgba(0, 0, 0, .2);
+                }
+                &::-webkit-scrollbar-track {
+                    border-radius: 10px;  
+                    background-color: var(--whiteColor);
+                }
+            }
+
+            &:last-child {
+                padding-bottom: 0;
+            }
+            &:first-child {
+                padding-top: 0;
+            }
+        }
+        .mat-mdc-checkbox {
+            &.mat-accent {
+                .mat-mdc-checkbox-ripple {
+                    display: none;
+                }
+                .mdc-form-field {
+                    color: var(--paragraphColor);
+                }
+            }
+        }
+        &::after {
+            display: none;
+        }
+        &.bg-main-color {
+            background-color: var(--heraBlueColor) !important;
+        }
+        .mat-mdc-row, .mdc-data-table__content {
+            font-family: var(--fontFamily);
+        }
+    }
+}
+
+// Keyframes CSS
+@keyframes ripple {
+    0%, 35% {
+        transform: scale(0);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.8;
+    }
+    100% {
+        opacity: 0;
+        transform: scale(4);
+    }
+}
+
+/* Max width 767px */
+@media only screen and (max-width : 767px) {
+
+    body {
+        font-size: 14px;
+    }
+    p {
+        font-size: 14px;
+    }
+    input {
+        font-size: 14px;
+    }
+    .h1, h1 {
+        font-size: 36px;
+    }
+    .h2, h2 {
+        font-size: 28px;
+    }
+    .h3, h3 {
+        font-size: 24px;
+    }
+    .h4, h4 {
+        font-size: 20px;
+    }
+    .h5, h5 {
+        font-size: 16px;
+    }
+    .h6, h6 {
+        font-size: 12px;
+    }
+    button {
+        font-size: 14px !important;
+    }
+
+    // Default BTN
+    .default-btn {
+        font-size: 13px;
+        padding: 11px 31px 11px 15px;
+
+        i {
+            margin-top: 2px;
+            right: 15px;
+        }
+    }
+
+    // Mat Card CSS
+    .mat-mdc-card {
+        &.tagus-card {
+            padding: 15px;
+
+            .mat-mdc-card-header {
+                margin-bottom: 15px;
+
+                .btn {
+                    padding: 0 0 2px 18px !important;
+                    font-size: 14px !important;
+
+                    &::before {
+                        font-size: 12px;
+                        margin-top: -1px;
+                    }
+                }
+                .dot-btn {
+                    top: 1px;
+                    font-size: 22px !important;
+                }
+                &.border-bottom {
+                    padding-bottom: 15px;
+                    border-bottom: 1px solid #eef0f7;
+                }
+                .default-btn {
+                    padding: 12px 18px 12px 35px !important;
+                    font: {
+                        size: 13px !important;
+                    };
+                    i {
+                        left: 15px;
+                        font-size: 15px;
+                    }
+                }
+            }
+            .mat-mdc-card-content {
+                .tagus-mat-table {
+                    -webkit-overflow-scrolling: touch;
+                    overflow: {
+                        x: auto;
+                        y: hidden;
+                    };
+                    .mat-mdc-table {
+                        .mdc-data-table__header-row {
+                            .mdc-data-table__header-cell {
+                                padding: 12px 15px;
+                                white-space: nowrap;
+
+                                &::after {
+                                    height: 15px;
+                                }
+                            }
+                        }
+                        .mdc-data-table__content {
+                            .mdc-data-table__row {
+                                .mdc-data-table__cell {
+                                    font-size: 13.5px;
+                                    padding: 12px 15px;
+                                    white-space: nowrap;
+
+                                    .product-info {
+                                        margin-right: 0;
+                                        padding-right: 35px;
+
+                                        img {
+                                            width: 40px;
+                                            margin-right: 10px;
+                                            border-radius: 5px;
+                                        }
+                                    }
+                                    .badge {
+                                        font-size: 13px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    .mat-mdc-paginator-outer-container {
+                        margin-top: 5px;
+
+                        .mat-mdc-paginator-container {
+                            .mat-mdc-icon-button {
+                                &.mat-mdc-button-base {
+                                    width: 38px;
+                                    height: 38px;
+                                    padding: 5px;
+                                }
+                            }
+                        }
+                    }
+                    &.teamMembersListTable {
+                        .mat-mdc-table {
+                            .mdc-data-table__header-row {
+                                .mdc-data-table__header-cell {
+                                    padding: {
+                                        left: 15px;
+                                        right: 15px;
+                                    };
+                                }
+                            }
+                            .mdc-data-table__content {
+                                .mdc-data-table__row {
+                                    .mdc-data-table__cell {
+                                        padding: {
+                                            left: 15px;
+                                            right: 15px;
+                                        };
+                                        .role-info {
+                                            padding-left: 27px;
+
+                                            i, img {
+                                                font-size: 15px;
+                                            }
+                                        }
+                                        .user-info {
+                                            padding-right: 35px;
+                                            margin-right: 0;
+                                            font-size: 14px;
+
+                                            img {
+                                                width: 42px;
+                                                margin-right: 12px;
+                                            }
+                                            span {
+                                                font-size: 14px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+/* Min width 576px to Max width 767px */
+@media only screen and (min-width : 576px) and (max-width : 767px) {}
+
+/* Min width 768px to Max width 991px */
+@media only screen and (min-width : 768px) and (max-width : 991px) {
+
+    body {
+        font-size: 14px;
+    }
+    p {
+        font-size: 14px;
+    }
+    input {
+        font-size: 14px;
+    }
+    button {
+        font-size: 14px !important;
+    }
+
+    // Mat Card CSS
+    .mat-mdc-card {
+        &.tagus-card {
+            padding: 20px;
+
+            .mat-mdc-card-header {
+                margin-bottom: 20px;
+
+                .btn {
+                    padding: 0 0 2px 23px !important;
+                    font-size: 14px !important;
+
+                    &::before {
+                        font: {
+                            size: 14px;
+                        };
+                    }
+                }
+                &.border-bottom {
+                    padding-bottom: 15px;
+                }
+            }
+            .mat-mdc-card-content {
+                .tagus-mat-table {
+                    -webkit-overflow-scrolling: touch;
+                    overflow: {
+                        x: auto;
+                        y: hidden;
+                    };
+                    .mat-mdc-table {
+                        .mdc-data-table__header-row {
+                            .mdc-data-table__header-cell {
+                                padding: 15px 20px;
+                                white-space: nowrap;
+
+                                &::after {
+                                    height: 15px;
+                                }
+                            }
+                        }
+                        .mdc-data-table__content {
+                            .mdc-data-table__row {
+                                .mdc-data-table__cell {
+                                    padding: 15px 20px;
+                                    white-space: nowrap;
+
+                                    .product-info {
+                                        margin-right: 0;
+                                        padding-right: 35px;
+                                        
+                                        img {
+                                            width: 45px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 992px to Max width 1199px */
+@media only screen and (min-width : 992px) and (max-width : 1199px) {
+
+    // Mat Card CSS
+    .mat-mdc-card {
+        &.tagus-card {
+            .mat-mdc-card-content {
+                .tagus-mat-table {
+                    -webkit-overflow-scrolling: touch;
+                    overflow: {
+                        x: auto;
+                        y: hidden;
+                    };
+                    .mat-mdc-table {
+                        .mdc-data-table__header-row {
+                            .mdc-data-table__header-cell {
+                                white-space: nowrap;
+                            }
+                        }
+                        .mdc-data-table__content {
+                            .mdc-data-table__row {
+                                .mdc-data-table__cell {
+                                    white-space: nowrap;
+
+                                    .product-info {
+                                        padding-right: 25px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+/* Min width 1200px to Max width 1399px */
+@media only screen and (min-width: 1200px) and (max-width: 1399px) {
+
+    // Mat Card CSS
+    .mat-mdc-card {
+        &.tagus-card {
+            .mat-mdc-card-content {
+                .tagus-mat-table {
+                    -webkit-overflow-scrolling: touch;
+                    overflow: {
+                        x: auto;
+                        y: hidden;
+                    };
+                    .mat-mdc-table {
+                        .mdc-data-table__header-row {
+                            .mdc-data-table__header-cell {
+                                white-space: nowrap;
+                            }
+                        }
+                        .mdc-data-table__content {
+                            .mdc-data-table__row {
+                                .mdc-data-table__cell {
+                                    white-space: nowrap;
+
+                                    .product-info {
+                                        padding-right: 25px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* Min width 1600px */
+@media only screen and (min-width: 1600px) {
+
+    // Default BTN
+    .default-btn {
+        font-size: 14px;
+        padding: 11px 42px 11px 22px;
+
+        i {
+            right: 22px;
+            margin-top: 1px;
+        }
+    }
+
+    // Mat Card CSS
+    .mat-mdc-card {
+        &.tagus-card {
+            .mat-mdc-card-content {
+                .tagus-mat-table {
+                    .mat-mdc-table {
+                        .mdc-data-table__content {
+                            .mdc-data-table__row {
+                                .mdc-data-table__cell {
+                                    .product-info {
+                                        margin-right: -80px;
+                                        padding-right: 0;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}
+
+//subs list
+.mat-button-toggle-appearance-standard .mat-button-toggle-label-content {
+    line-height: 21px !important;
+
+    @media only screen and (max-width: 500px) {
+        padding: 0 8px !important;
+    }
+}
+
+.mat-button-toggle-button {
+    height: 69px;
+}
+
+.mat-button-toggle-group {
+    --mat-standard-button-toggle-divider-color: #31BC6D; /* Your custom color */
+    --mat-standard-button-toggle-selected-state-background-color: #31BC6D;
+    --mat-standard-button-toggle-selected-state-text-color: #ffffff;
+}
