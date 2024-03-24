@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { environment } from 'src/environments/environment';
 
 interface SoundDemo {
   soundPath: string;
@@ -13,10 +14,12 @@ interface SoundDemo {
   styleUrl: './landing.component.scss'
 })
 export class LandingComponent {
+  topImageUrl = `${environment.assetsBaseUrl}assets/img/top2.png`;
+
   demos: SoundDemo[] = [
     {
-      soundPath: 'assets/audio/demo1.mp3',
-      imagePath: 'assets/img/pictures/1.webp',
+      soundPath: `${environment.assetsBaseUrl}assets/audio/demo1.mp3`,
+      imagePath: `${environment.assetsBaseUrl}assets/img/pictures/1.webp`,
       title: 'Web Novel (with POVs and dialogs)',
       text: `Chapter 1: A New Beginning
 
@@ -32,8 +35,8 @@ export class LandingComponent {
       'That can't be true! Mom would never keep that from me!' I say, crying.
       'She wanted to tell you the truth when you turned eighteen, hoping you'd have a happy life until then. But now, you'll never find out about your real father,' he taunts, kicking me hard in the ribs. I scream in pain as he locks the door, leaving me alone.`
     }, {
-      soundPath: 'assets/audio/demo2.mp3',
-      imagePath: 'assets/img/pictures/2.webp',
+      soundPath: `${environment.assetsBaseUrl}assets/audio/demo2.mp3`,
+      imagePath: `${environment.assetsBaseUrl}assets/img/pictures/2.webp`,
       title: 'Crime Story (action)',
       text: `
       Chapter 1: The Ultimatum of Marcus
@@ -50,8 +53,8 @@ The room was filled with the whimpers of the eight remaining men.
 'You know one thing you should not do? Stealing from Marcus Rossi!'
       `,
     }, {
-      soundPath: 'assets/audio/demo3.mp3',
-      imagePath: 'assets/img/pictures/3.webp',
+      soundPath: `${environment.assetsBaseUrl}assets/audio/demo3.mp3`,
+      imagePath: `${environment.assetsBaseUrl}assets/img/pictures/3.webp`,
       title: `Web Novel with Child's POV`,
       text: `
       Lily's Point of View. 6 years old.
@@ -61,8 +64,8 @@ I play hide and seek with my new friend, a fox I name Rusty. I say, "Hi, I'm Lil
 The cave is so pretty. There are glow worms that twinkle like tiny stars. It's like a fairy tale! The walls have twisty green vines and beautiful purple flowers, and it smells like yummy perfume.
       `,
     }, {
-      soundPath: 'assets/audio/demo4.mp3',
-      imagePath: 'assets/img/pictures/4.webp',
+      soundPath: `${environment.assetsBaseUrl}assets/audio/demo4.mp3`,
+      imagePath: `${environment.assetsBaseUrl}assets/img/pictures/4.webp`,
       title: `Werefolf Novel`,
       text: `
       I got up early, charged with excitement. Tomorrow's my eighteenth birthday, the day I meet my wolf. Despite the rumors of pain during the first shift, I wasn't bothered. Pain is temporary, and it eases with time. I can handle a bit of it.
